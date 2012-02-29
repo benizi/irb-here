@@ -8,13 +8,20 @@ Gem::Specification.new do |s|
   s.authors     = ["Benjamin R. Haskell"]
   s.email       = ["ruby@benizi.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = 'Add some simple hooks for starting an IRB session'
+  s.description = <<DESC
+Add some simple hooks for starting an IRB session.
 
-  s.rubyforge_project = "irb-here"
+# code code code
+binding.irb  # starts an IRB session in the current context
+DESC
+
+  #s.rubyforge_project = "irb-here"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+
+  s.add_dependency 'irb'
 end
